@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "短网址";
+}
+
+<div class="content">
+    <div>
+        <input type="text" id="inp-url"  />
+        <button type="button" id="but-url" onclick="generate()" style="">
+            生成短网址
+        </button>
+    </div>
+    <div style="margin-top:10px">
+        <div style=" margin-top:8px; border-left: 5px solid #808080;padding-left:5px;"><label style="height:30px">短网址：</label><a href="" id="newUrl"></a></div>
+        <div style="margin-top:8px; border-left: 5px solid #808080;padding-left:5px;"><label>原网址：</label><a id="oldUrl"></a></div>
+    </div>
+    <div style="margin-top:8px">
+        <div>短网址二维码</div>
+        <div style="margin-top:10px;text-align: center;">
+            <img id="codeImg" />
+        </div>
+    </div>
+</div>
+@section Scripts{
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/index.js"></script>
+}
+
+@section styles{
+    <link href="~/css/index.css" rel="stylesheet" />
+}

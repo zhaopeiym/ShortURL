@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ShortURL</name>
+    </assembly>
+    <members>
+        <member name="T:ShortURL.CodeHelper">
+            <summary>
+            二维码和条形码
+            https://blog.csdn.net/rex0y/article/details/81098637
+            </summary>
+        </member>
+        <member name="M:ShortURL.CodeHelper.CreateCodeEwm(System.String,System.Int32,System.Int32)">
+            <summary>
+            生成二维码
+            </summary>
+            <param name="message"></param>Margin 
+            <param name="gifFileName"></param>
+            <param name="width"></param>
+            <param name="height"></param>
+        </member>
+        <member name="M:ShortURL.CodeHelper.CreateCodeBitmap(System.String,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+            <param name="width"></param>
+            <param name="height"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ShortURL.CodeHelper.GetQRCode(System.String,System.Int32)">
+            <summary>
+            https://www.codetd.com/article/1715157
+            </summary>
+            <param name="url"></param>
+            <param name="pixel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ShortURL.CodeHelper.ReadFromImage(System.String)">
+            <summary>
+            读取二维码或者条形码从图片
+            </summary>
+            <param name="imgFile"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ShortURL.CodeHelper.BitmapToArray(System.DrawingCore.Bitmap)">
+            <summary>
+            将Bitmap  写为byte[]的方法
+            </summary>
+            <param name="bmp"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ShortURL.CodeHelper.CreateCodeTxm(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            生成条形码
+            </summary>
+            <param name="message"></param>
+            <param name="gifFileName"></param>
+            <param name="width"></param>
+            <param name="height"></param>
+        </member>
+        <member name="M:ShortURL.Controllers.ValuesController.Generate(System.String)">
+            <summary>
+            解析生成短网址，并保存到数据库
+            </summary>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ShortURL.Controllers.ValuesController.Img(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="shortUrl"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ShortURL.GenerateShortURL">
+            <summary>
+            https://www.cnblogs.com/xmlnode/p/4544302.html
+            </summary>
+        </member>
+        <member name="M:ShortURL.GenerateShortURL.GenerateKeys">
+            <summary>
+            生成随机的0-9a-zA-Z字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:ShortURL.GenerateShortURL.length">
+            <summary>
+            短码长度        
+            </summary>
+        </member>
+        <member name="P:ShortURL.GenerateShortURL.maxLength">
+            <summary>
+            注意：超过设定的长度可能会有异常数据
+            </summary>
+        </member>
+        <member name="M:ShortURL.GenerateShortURL.Convert(System.Int64)">
+            <summary>
+            10进制转换为62进制【简单】
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ShortURL.GenerateShortURL.Convert(System.String)">
+            <summary>
+            将62进制转为10进制【简单】
+            </summary>
+            <param name="num"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ShortURL.GenerateShortURL.ConfusionConvert(System.Int64)">
+            <summary>
+            10进制转换为62进制【混淆】
+            </summary>
+            <param name="num"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ShortURL.GenerateShortURL.ConfusionConvert(System.String)">
+            <summary>
+            将62进制转为10进制【混淆】
+            </summary>
+            <param name="num"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

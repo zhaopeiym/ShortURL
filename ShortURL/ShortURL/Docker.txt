@@ -1,0 +1,1 @@
+﻿docker run -v /fileData/shorturl/appsettings.json:/app/appsettings.json -v /fileData/shorturl/wwwroot:/app/wwwroot --restart=unless-stopped --privileged=true -dp 3080:80 shorturl
