@@ -1,9 +1,18 @@
-﻿#基础镜像（用来构建镜像）
-FROM microsoft/dotnet:2.1-aspnetcore-runtime
+﻿
+#基础镜像（用来构建镜像）
+FROM bennyzhao/aspnet:3.0-alpine AS base
 WORKDIR /app
-COPY . .
-ENV TZ=Asia/Shanghai
-RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
-RUN mv /etc/apt/sources.list /etc/apt/sources.list.bak && mv sources.list /etc/apt/ && apt-get update -y && apt-get install -y libgdiplus && apt-get clean && ln -s /usr/lib/libgdiplus.so /usr/lib/gdiplus.dll
 EXPOSE 80
-ENTRYPOINT ["dotnet", "ShortURL.dll"]
+
+#编译（临时镜像，主要用来编译发布项目）
+FROM mcr.microsoft.com/dotnet/core/sdk:3.0-alpine AS publish
+WORKDIR /src
+COPY . .
+WORKDIR /src/ShortURL
+RUN dotnet publish -c Release -o /app
+
+#构建镜像
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app .
+CMD ["dotnet", "ShortURL.dll"]
