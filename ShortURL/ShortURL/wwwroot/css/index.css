@@ -38,15 +38,8 @@ html {
     border-radius: 6px;
 }
 
-
-/*PC 大屏台式*/
-@media (min-width: 1300px) {
-    .content {
-        max-width: 40%;
-    }
-}
-/*笔记本*/
-@media (min-width: 992px) {
+/*笔记本 (小于1400px时应用的样式)*/
+@media screen and (max-width: 1400px) {
     .content {
         max-width: 60%;
     }
@@ -55,10 +48,12 @@ html {
         min-width: 83%;
     }
 }
-/*手机端*/
+
+/*手机端 (小于992px时应用的样式)*/
 @media screen and (max-width: 992px) {
     .content {
         max-width: 100%;
+        margin-top: 3px;
     }
 
     #inp-url {
